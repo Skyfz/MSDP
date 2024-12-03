@@ -96,14 +96,12 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
-          </Link>
           <Link isExternal aria-label="Whatsapp" href="https://wa.me/27728288471">
-            <FaWhatsapp className="text-default-500 size-6" />
+            <FaWhatsapp className="text-default-500 size-6 mr-2" />
           </Link>
           <ThemeSwitch />
         </NavbarItem>
+        <NavbarMenuToggle className="lg:hidden" />
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
       </NavbarContent>
 

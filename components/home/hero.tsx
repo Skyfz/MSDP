@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { FadeIn } from "@/components/animations/fade-in";
 import { ScaleIn } from "@/components/animations/scale-in";
-import { FlipWords } from "../ui/flip-words";
+import { FlipWords } from "@/components/ui/flip-words";
 
 export function Hero() {
 

@@ -2,8 +2,8 @@
 
 import {Button, ButtonGroup} from "@nextui-org/button";
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import {Input} from "@nextui-org/input";
+import {Textarea} from "@nextui-org/input";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, User, MessageSquare, FileText } from "lucide-react";
 import { FadeIn } from "@/components/animations/fade-in";
