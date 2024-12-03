@@ -37,21 +37,23 @@ export function Contact() {
               <form className="p-8 space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium flex items-center gap-2">
+                    <label htmlFor="fullName" className="text-sm font-medium flex items-center gap-2">
                       <User className="h-4 w-4 text-muted-foreground" />
                       Full Name
                     </label>
                     <Input 
+                      id="fullName"
                       placeholder="John Doe" 
                       className="h-11 shadow-xl" 
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium flex items-center gap-2">
+                    <label htmlFor="email" className="text-sm font-medium flex items-center gap-2">
                       <Mail className="h-4 w-4 text-muted-foreground" />
                       Email
                     </label>
                     <Input 
+                      id="email"
                       type="email" 
                       placeholder="john@company.com" 
                       className="h-11 shadow-xl" 
@@ -59,21 +61,23 @@ export function Contact() {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium flex items-center gap-2">
+                  <label htmlFor="subject" className="text-sm font-medium flex items-center gap-2">
                     <FileText className="h-4 w-4 text-muted-foreground" />
                     Subject
                   </label>
                   <Input 
+                    id="subject"
                     placeholder="How can we help?" 
                     className="h-11 shadow-xl" 
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium flex items-center gap-2">
+                  <label htmlFor="message" className="text-sm font-medium flex items-center gap-2">
                     <MessageSquare className="h-4 w-4 text-muted-foreground" />
                     Message
                   </label>
                   <Textarea 
+                    id="message"
                     placeholder="Your message..." 
                     className="min-h-[80px] resize-none shadow-xl" 
                   />
