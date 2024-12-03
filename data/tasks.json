@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+      "id": 1733172500001,
+      "text": "Push to GitHub repo",
+      "completed": false
+    },
+    {
+      "id": 1733172500002,
+      "text": "Push to Vercel from GitHub",
+      "completed": false
+    },
+    {
+      "id": 1733172500003,
+      "text": "Set up webhooks for Vercel repo",
+      "completed": false
+    },
+    {
+      "id": 1733172500004,
+      "text": "Implement WhatsApp receiving for payment confirmation",
+      "completed": false
+    },
+    {
+      "id": 1733172500005,
+      "text": "Integrate PayFast (or implement demo payment flow)",
+      "completed": false
+    },
+    {
+      "id": 1733183730295,
+      "text": "Finalize Demo Frontend With Witness",
+      "completed": false
+    }
+  ]
+}
