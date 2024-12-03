@@ -57,14 +57,21 @@ export function FAQ() {
             Find answers to common questions about our services
           </p>
         </div>
-          <Accordion defaultExpandedKeys={["0"]}>
+          <Accordion 
+            defaultExpandedKeys={["0"]} 
+            variant="bordered" 
+            selectionMode="multiple"
+          >
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 aria-label={faq.question}
                 title={faq.question}
+                className="p-2"
               >
-                {faq.answer}
+                <div className="w-full">
+                  {faq.answer}
+                </div>
               </AccordionItem>
             ))}
           </Accordion>

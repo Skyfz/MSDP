@@ -95,7 +95,7 @@ export function Contact() {
                     <Phone className="h-6 w-6 text-foreground" />
                     <div>
                       <h3 className="font-semibold mb-1">Phone</h3>
-                      <p className="text-muted-foreground">+27 (011) 972-1555</p>
+                      <p className="text-muted-foreground">+27(11) 972-1555</p>
                     </div>
                   </div>
                 </Card>
@@ -107,7 +107,7 @@ export function Contact() {
                     <Mail className="h-6 w-6 text-foreground" />
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-muted-foreground">contact@msdp.com</p>
+                      <p className="text-muted-foreground">info@msdp.com</p>
                     </div>
                   </div>
                 </Card>

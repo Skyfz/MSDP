@@ -1,8 +1,9 @@
 "use client";
 
-import { Building2 } from "lucide-react";
+import { Building2, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { FaWhatsapp } from "react-icons/fa";
 
 
 export function Footer() {
@@ -23,10 +24,10 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>123 Business Ave, Suite 100</p>
-              <p>New York, NY 10001</p>
-              <p>+1 (555) 123-4567</p>
-              <p>contact@msdp.com</p>
+              <p>128 Monument Road</p>
+              <p>Kempton Park, GP 1620</p>
+              <p>+27(11) 972-1555</p>
+              <p>info@msdp.com</p>
             </div>
           </div>
           
@@ -54,6 +55,36 @@ export function Footer() {
               <p>24/7 Online Support Available</p>
             </div>
           </div>
+
+          <div>
+            <h3 className="font-semibold mb-4">Connect With Us</h3>
+            <div className="flex gap-4">
+              <a 
+                href="tel:+27119721555" 
+                className="p-2 rounded-full hover:bg-primary/10 transition-colors"
+                aria-label="Call us"
+              >
+                <Phone className="h-6 w-6" />
+              </a>
+              <a 
+                href="mailto:info@msdp.com" 
+                className="p-2 rounded-full hover:bg-primary/10 transition-colors"
+                aria-label="Email us"
+              >
+                <Mail className="h-6 w-6" />
+              </a>
+              <a 
+                href="https://wa.me/27728288471" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-full hover:bg-primary/10 transition-colors"
+                aria-label="Message us on WhatsApp"
+              >
+                <FaWhatsapp className="h-6 w-6" />
+              </a>
+            </div>
+          </div>
+
         </div>
         
         <div className="mt-12 pt-8 border-t text-center text-muted-foreground">
