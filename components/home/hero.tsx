@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { FadeIn } from "@/components/animations/fade-in";

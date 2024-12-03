@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
+import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import Image from "next/image";

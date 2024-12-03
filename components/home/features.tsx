@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
+import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import {
