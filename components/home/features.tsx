@@ -114,7 +114,7 @@ export function Features() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-48 mb-48">
             {features.map((feature) => (
               <StaggerItem key={feature.title}>
-                <Card className="p-8 h-full bg-background border-2 border-foreground/20 hover:border-primary/50 transition-all duration-300">
+                <Card className="p-8 h-full bg-background border-1 border-foreground/20 hover:border-primary/50 transition-all duration-300">
                   <feature.icon className="h-12 w-12 text-foreground mb-6" />
                   <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
