@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import {Button, ButtonGroup} from "@nextui-org/button";
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -82,7 +82,7 @@ export function Contact() {
                     className="min-h-[80px] resize-none shadow-xl" 
                   />
                 </div>
-                <Button size="lg" className="w-full h-11">Send Message</Button>
+                <Button size="lg" variant="shadow" color="primary" className="w-full h-11">Send Message</Button>
               </form>
             </Card>
           </motion.div>

@@ -1,11 +1,5 @@
 "use client";
-
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import {Accordion, AccordionItem} from "@nextui-org/accordion";
 import { motion } from "framer-motion";
 
 const faqs = [
@@ -51,7 +45,6 @@ const faqs = [
   },
 ];
 
-
 export function FAQ() {
   return (
     <section className="py-4 bg-muted/50 pt-32 pb-32" id="faq">
@@ -64,23 +57,17 @@ export function FAQ() {
             Find answers to common questions about our services
           </p>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion defaultExpandedKeys={["0"]}>
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="backdrop-blur-xl bg-background/60 border-0 rounded-lg">
-                <AccordionTrigger className="px-6 text-lg font-semibold">{faq.question}</AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
+              <AccordionItem 
+                key={index} 
+                aria-label={faq.question}
+                title={faq.question}
+              >
+                {faq.answer}
               </AccordionItem>
             ))}
           </Accordion>
-        </motion.div>
       </div>
     </section>
   );

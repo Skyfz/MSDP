@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import {Button, ButtonGroup} from "@nextui-org/button";
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -30,11 +30,11 @@ export function Hero() {
             </FadeIn>
             <FadeIn delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-lg h-14">
+                <Button size="lg" variant="shadow" color="primary" className="text-lg h-14">
                   Get Started
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="ghost" className="text-lg h-14">
+                <Button size="lg" variant="light" className="text-lg h-14">
                   Learn More
                 </Button>
               </div>

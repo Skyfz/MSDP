@@ -1,7 +1,7 @@
 "use client";
 
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
-import { Button } from "@/components/ui/button";
+import {Button, ButtonGroup} from "@nextui-org/button";
 import Image from "next/image";
 import {
   BarChart3,
@@ -98,11 +98,11 @@ export function Features() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <Button size="lg" className="text-lg h-14">
+              <Button size="lg" variant="shadow" color="primary" className="text-lg h-14">
                 Get a Call Back
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="ghost" className="text-lg h-14">
+              <Button size="lg" variant="light" className="text-lg h-14">
                 Read More
               </Button>
             </div>
