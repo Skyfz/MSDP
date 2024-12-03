@@ -21,7 +21,7 @@ export function Contact() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-              Let's discuss how we can help recover your outstanding debts
+              Let&apos;s discuss how we can help recover your outstanding debts
             </p>
           </FadeIn>
         </div>

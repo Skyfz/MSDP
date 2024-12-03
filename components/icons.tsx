@@ -153,7 +153,6 @@ export const HeartFilledIcon = ({
       fill="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={1.5}
     />
   </svg>
 );
@@ -174,14 +173,12 @@ export const SearchIcon = (props: IconSvgProps) => (
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth="2"
     />
     <path
       d="M22 22L20 20"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth="2"
     />
   </svg>
 );
