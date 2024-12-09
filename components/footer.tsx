@@ -53,7 +53,7 @@ export function Footer() {
             <div className="space-y-2 text-muted-foreground">
               <p>Monday - Friday</p>
               <p>9:00 AM - 6:00 PM SAST</p>
-              <p>24/7 Online Support Available</p>
+              {/* <p>24/7 Online Support Available</p> */}
             </div>
           </div>
 
