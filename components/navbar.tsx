@@ -23,7 +23,7 @@ import {
   SearchIcon,
 } from "@/components/icons";
 import { FaWhatsapp } from "react-icons/fa";
-import { Building2 } from "lucide-react";
+import { Building2, Mail, Phone } from "lucide-react";
 import * as React from "react";
 import { usePathname } from "next/navigation";
 
@@ -89,10 +89,16 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Whatsapp" href="https://wa.me/27728288471">
-            <FaWhatsapp className="text-default-500 size-6 mr-2" />
-          </Link>
+        <NavbarItem className="hidden sm:flex gap-4">
+        <Link isExternal aria-label="Phone" href="tel:+27119721555">
+          <Phone className="text-default-500 size-6" />
+        </Link>
+        <Link isExternal aria-label="Mail" href="mailto:tanya@msdp.co.za">
+          <Mail className="text-default-500 size-6" />
+        </Link>
+        <Link isExternal aria-label="Whatsapp" href="https://wa.me/27119721555">
+          <FaWhatsapp className="text-default-500 size-6" />
+        </Link>
           <ThemeSwitch />
         </NavbarItem>
         <NavbarMenuToggle className="lg:hidden" />
@@ -100,7 +106,14 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="Whatsapp" href="https://wa.me/27728288471">
+        
+        <Link isExternal aria-label="Phone" href="tel:+27119721555">
+          <Phone className="text-default-500 size-6" />
+        </Link>
+        <Link isExternal aria-label="Mail" href="mailto:tanya@msdp.co.za">
+          <Mail className="text-default-500 size-6" />
+        </Link>
+        <Link isExternal aria-label="Whatsapp" href="https://wa.me/27119721555">
           <FaWhatsapp className="text-default-500 size-6" />
         </Link>
         <ThemeSwitch />
