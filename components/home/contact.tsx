@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, User, MessageSquare, FileText } from "lucide-react";
 import { FadeIn } from "@/components/animations/fade-in";
 import { StaggerIn, StaggerItem } from "@/components/animations/stagger-in";
-import {Form} from "@nextui-org/form"
+import {Form} from "@nextui-org/react"
 import React from "react";
 import {Select, SelectSection, SelectItem} from "@nextui-org/react";
 

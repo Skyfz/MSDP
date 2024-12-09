@@ -9,10 +9,7 @@
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
 	"dependencies": {
-		"@nextui-org/link": "^2.2.4",
 		"@nextui-org/react": "^2.6.5",
-		"@nextui-org/system": "^2.4.4",
-		"@nextui-org/theme": "^2.4.1",
 		"@radix-ui/react-accordion": "^1.2.1",
 		"@radix-ui/react-slot": "^1.1.0",
 		"@react-aria/ssr": "3.9.4",
