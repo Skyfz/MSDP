@@ -1,6 +1,6 @@
 "use client";
 
-import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
+import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/react";
 import {Button, ButtonGroup} from "@nextui-org/react";
 import Image from "next/image";
 import {

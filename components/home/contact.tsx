@@ -1,16 +1,16 @@
 "use client";
 
 import {Button, ButtonGroup} from "@nextui-org/react";
-import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
-import {Input} from "@nextui-org/input";
-import {Textarea} from "@nextui-org/input";
+import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/react";
+import {Input} from "@nextui-org/react";
+import {Textarea} from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, User, MessageSquare, FileText } from "lucide-react";
 import { FadeIn } from "@/components/animations/fade-in";
 import { StaggerIn, StaggerItem } from "@/components/animations/stagger-in";
 import {Form} from "@nextui-org/form"
 import React from "react";
-import {Select, SelectSection, SelectItem} from "@nextui-org/select";
+import {Select, SelectSection, SelectItem} from "@nextui-org/react";
 
 export function Contact() {
   const [formErrors, setFormErrors] = React.useState({

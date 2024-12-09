@@ -1,5 +1,5 @@
 "use client";
-import {Accordion, AccordionItem} from "@nextui-org/accordion";
+import {Accordion, AccordionItem} from "@nextui-org/react";
 import { motion } from "framer-motion";
 
 const faqs = [
