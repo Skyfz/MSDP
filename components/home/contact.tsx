@@ -106,7 +106,7 @@ export function Contact() {
   ];
   
   return (
-    <section className="py-4 relative overflow-hidden pt-32 pb-32" id="contact">      
+    <section className="py-4 relative overflow-hidden pt-20 pb-32" id="contact">      
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <FadeIn>
@@ -193,7 +193,7 @@ export function Contact() {
                       label="Message"
                       labelPlacement="outside"
                       placeholder="Your message..."
-                      minRows={3}
+                      minRows={1}
                       isRequired
                     />
                   </div>

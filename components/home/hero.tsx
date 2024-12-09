@@ -33,7 +33,7 @@ export function Hero() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   as={Link}
-                  href="#features"
+                  href="#solutions"
                   size="lg" 
                   variant="shadow" 
                   color="primary" 
@@ -64,13 +64,13 @@ export function Hero() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
+              {/* <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
                 <div className="grid sm:grid-cols-2 gap-2 md:gap-4">
                   <FadeIn delay={0.6}>
                     <Card className="bg-background/80 backdrop-blur-sm border-none">
                       <div className="p-4">
-                        <h3 className="text-lg md:text-4xl font-bold md:mb-2 text-gradient">95%</h3>
-                        <p className="text-lg md:text-xl">Success Rate</p>
+                        <h3 className="text-lg md:text-4xl font-bold md:mb-2 text-gradient">Excellent</h3>
+                        <p className="text-lg md:text-xl">Collection Rate</p>
                       </div>
                     </Card>
                   </FadeIn>
@@ -83,7 +83,7 @@ export function Hero() {
                     </Card>
                   </FadeIn>
                 </div>
-              </div>
+              </div> */}
             </div>
           </ScaleIn>
         </div>

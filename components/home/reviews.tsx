@@ -35,18 +35,18 @@ const testimonials = [
 
 
 
-export function Testimonials() {
+export function Reviews() {
   return (
-    <section className="py-4 relative overflow-hidden pt-32 pb-32">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-24">
+    <section className="py-4 relative overflow-hidden pt-8 lg:pt-32 pb-32">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+        <div className="text-left mb-24">
           <FadeIn>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               What Our <span className="text-gradient">Clients Say</span>
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl">
               See what our clients say about our debt collection services
             </p>
           </FadeIn>

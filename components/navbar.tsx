@@ -58,7 +58,7 @@ export const Navbar = () => {
       // shouldHideOnScroll
       position="sticky"
       classNames={{
-        wrapper: "top-0 z-[100] w-full",
+        wrapper: "top-0 z-[100] w-full my-2",
       }}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}

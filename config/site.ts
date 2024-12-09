@@ -4,17 +4,17 @@ export const siteConfig = {
   name: "MSDP",
   description: "Make beautiful websites regardless of your design experience.",
   navItems: [
-    // {
-    //   label: "Home",
-    //   href: "/#hero",
-    // },
+    {
+      label: "Solutions",
+      href: "/#solutions",
+    },
     {
       label: "Features",
       href: "/#features",
     },
     {
-      label: "Testimonials",
-      href: "/#testimonials",
+      label: "Reviews",
+      href: "/#reviews",
     },
     {
       label: "Contact",
@@ -26,17 +26,17 @@ export const siteConfig = {
     }
   ],
   navMenuItems: [
-    // {
-    //   label: "Home",
-    //   href: "/#hero",
-    // },
+    {
+      label: "Solutions",
+      href: "/#solutions",
+    },
     {
       label: "Features",
       href: "/#features",
     },
     {
-      label: "Testimonials",
-      href: "/#testimonials",
+      label: "Reviews",
+      href: "/#reviews",
     },
     {
       label: "Contact",
