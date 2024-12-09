@@ -2,6 +2,7 @@
 
 import { Building2, Mail, Phone } from "lucide-react";
 import Link from "next/link";
+import { Link as NextUILink } from "@nextui-org/react";
 import { siteConfig } from "@/config/site";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -91,6 +92,18 @@ export function Footer() {
           <p> {new Date().getFullYear()} MSDP. All rights reserved.</p>
         </div>
       </div>
+      <footer className="w-full flex items-center justify-center py-3">
+              <NextUILink
+                isExternal
+                className="flex items-center gap-1 text-current"
+                href="https://skyfz.github.io/"
+                title="skypoint development homepage"
+              >
+                <span className="text-default-600">Powered by</span>
+                <p className="text-primary">Skypoint</p>
+              </NextUILink>
+            </footer>
     </footer>
+    
   );
 }

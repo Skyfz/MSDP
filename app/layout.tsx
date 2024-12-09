@@ -1,6 +1,5 @@
 import "@/styles/global.css";
 import { Metadata, Viewport } from "next";
-import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
@@ -45,17 +44,6 @@ export default function RootLayout({
             <main className="flex-grow">
               {children}
             </main>
-            <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://skyfz.github.io/"
-                title="skypoint development homepage"
-              >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">Skypoint</p>
-              </Link>
-            </footer>
           </div>
         </Providers>
       </body>
