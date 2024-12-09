@@ -13,13 +13,90 @@ import React from "react";
 import {Select, SelectSection, SelectItem} from "@nextui-org/react";
 
 export function Contact() {
-  const [formErrors, setFormErrors] = React.useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
+  const [errors, setErrors] = React.useState({});
+
+  interface FormData {
+    fullName: string;
+    email: string;
+    phone: string;
+    subject: string;
+    message: string;
+  }
+
+  const validateForm = (data: FormData) => {
+    const newErrors: Record<string, string> = {};
+
+    if (!data.fullName?.trim()) {
+      newErrors.fullName = "Full name is required";
+    } else if (data.fullName.trim().length < 3) {
+      newErrors.fullName = "Full name must be at least 3 characters";
+    }else if (!/^[a-zA-Z\s]+$/.test(data.fullName)) {
+      newErrors.fullName = "Full name can only contain letters and spaces";
+    }
+
+    if (!data.email?.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(data.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (!data.phone?.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else {
+      const phoneNumber = data.phone.trim();
+      const digitsOnly = phoneNumber.replace(/\D/g, '');
+      
+      if (phoneNumber.startsWith('0')) {
+        // For numbers starting with 0, require exactly 10 digits (including the 0)
+        if (digitsOnly.length !== 10) {
+          newErrors.phone = "Local numbers must be exactly 10 digits (e.g., 012-345-6789)";
+        }
+      } else if (phoneNumber.startsWith('+')) {
+        // For numbers starting with +, allow between 11-13 characters total
+        if (digitsOnly.length < 11 || phoneNumber.replace(/\s/g, '').length > 13) {
+          newErrors.phone = "International numbers must be 11-13 digits (e.g., +27 12 345 6789)";
+        }
+      } else {
+        newErrors.phone = "Phone number must start with either 0 or +";
+      }
+    }
+
+    if (!data.subject) {
+      newErrors.subject = "Please select a subject";
+    }
+
+    if (!data.message?.trim()) {
+      newErrors.message = "Message is required";
+    } else if (data.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+    }
+
+    return newErrors;
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formEntries = Object.fromEntries(new FormData(e.currentTarget));
+    
+    // Convert FormData to our expected types
+    const formData: FormData = {
+      fullName: String(formEntries.fullName || ''),
+      email: String(formEntries.email || ''),
+      phone: String(formEntries.phone || ''),
+      subject: String(formEntries.subject || ''),
+      message: String(formEntries.message || '')
+    };
+
+    const validationErrors = validateForm(formData);
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length > 0) {
+      return;
+    }
+
+    // If no errors, log form data
+    console.log(formData);
+  };
 
   const subjectOptions = [
     { key: 'debt-recovery', label: 'Debt Recovery Services' },
@@ -27,64 +104,6 @@ export function Contact() {
     { key: 'institutional-support', label: 'Institutional Debt Management' },
     { key: 'other', label: 'Other Inquiry' }
   ];
-
-  const validateField = (name: string, value: string) => {
-    switch (name) {
-      case 'fullName':
-        return value.trim().length < 2 ? 'Please enter your full name' : '';
-      case 'email':
-        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        return !emailRegex.test(value) ? 'Please enter a valid email address (e.g., name@example.com)' : '';
-      case 'phone':
-        // Remove all non-digit characters
-        const digitsOnly = value.replace(/\D/g, '');
-        // Check if number of digits is between 10 and 10, 
-        // and total length (including potential country code) is max 13
-        return (digitsOnly.length < 10 || value.replace(/\s/g, '').length > 13) 
-          ? 'Please enter a valid phone number (e.g., 012-345-6789 or +27 (23) 456 7890)' 
-          : '';
-      case 'subject':
-        return !value ? 'Please select a subject' : '';
-      case 'message':
-        return value.trim().length < 10 ? 'Please enter a message with at least 10 characters' : '';
-      default:
-        return '';
-    }
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    
-    // Force validation on all fields, even if they weren't touched
-    const errors = {
-      fullName: validateField('fullName', formData.get('fullName')?.toString() || ''),
-      email: validateField('email', formData.get('email')?.toString() || ''),
-      phone: validateField('phone', formData.get('phone')?.toString() || ''),
-      subject: validateField('subject', formData.get('subject')?.toString() || ''),
-      message: validateField('message', formData.get('message')?.toString() || '')
-    };
-
-    setFormErrors(errors);
-
-    // Check if there are any errors
-    const hasErrors = Object.values(errors).some(error => error !== '');
-    
-    if (hasErrors) {
-      return;
-    }
-
-    // If no errors, log or submit form
-    console.log({
-      name: formData.get('fullName'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      subject: formData.get('subject'),
-      message: formData.get('message')
-    });
-  };
   
   return (
     <section className="py-4 relative overflow-hidden pt-32 pb-32" id="contact">      
@@ -113,74 +132,52 @@ export function Contact() {
               <Form 
                 className="p-8 space-y-6"
                 onSubmit={handleSubmit}
-                validationBehavior="native"
+                validationErrors={errors}
               >
                 <div className="flex flex-col w-full gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="fullName" className="text-sm font-medium flex items-center gap-2">
-                      <User className="h-4 w-4 text-muted-foreground" />
-                      Full Name
-                    </label>
-                    <Input 
+                    <Input
                       id="fullName"
-                      isRequired
                       name="fullName"
-                      type="text"
                       label="Full Name"
+                      labelPlacement="outside"
                       placeholder="John Doe"
-                      isInvalid={!!formErrors.fullName}
-                      errorMessage={formErrors.fullName}
-                      className="w-full"
+                      startContent={<User className="text-default-400 pointer-events-none flex-shrink-0" />}
+                      isRequired
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium flex items-center gap-2">
-                      <Mail className="h-4 w-4 text-muted-foreground" />
-                      Email
-                    </label>
-                    <Input 
+                    <Input
                       id="email"
-                      isRequired
                       name="email"
                       type="email"
                       label="Email"
-                      placeholder="john@email.com"
-                      isInvalid={!!formErrors.email}
-                      errorMessage={formErrors.email}
-                      className="w-full"
+                      labelPlacement="outside"
+                      placeholder="john@example.com"
+                      startContent={<Mail className="text-default-400 pointer-events-none flex-shrink-0" />}
+                      isRequired
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-medium flex items-center gap-2">
-                      <Phone className="h-4 w-4 text-muted-foreground" />
-                      Phone
-                    </label>
-                    <Input 
+                    <Input
                       id="phone"
-                      isRequired
                       name="phone"
                       type="tel"
                       label="Phone"
-                      placeholder="+27(01) 234-4567"
-                      isInvalid={!!formErrors.phone}
-                      errorMessage={formErrors.phone}
-                      className="w-full"
+                      labelPlacement="outside"
+                      placeholder="+27 (01) 234-5678"
+                      startContent={<Phone className="text-default-400 pointer-events-none flex-shrink-0" />}
+                      isRequired
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium flex items-center gap-2">
-                      <FileText className="h-4 w-4 text-muted-foreground" />
-                      Subject
-                    </label>
-                    <Select 
+                    <Select
                       id="subject"
-                      isRequired
                       name="subject"
-                      label="Select Subject"
+                      label="Subject"
+                      labelPlacement="outside"
                       placeholder="Choose a subject"
-                      className="w-full"
-                      isInvalid={!!formErrors.subject}
-                      errorMessage={formErrors.subject}
+                      isRequired
                     >
                       {subjectOptions.map((option) => (
                         <SelectItem key={option.key} value={option.key}>
@@ -190,19 +187,14 @@ export function Contact() {
                     </Select>
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium flex items-center gap-2">
-                      <MessageSquare className="h-4 w-4 text-muted-foreground" />
-                      Message
-                    </label>
-                    <Textarea 
+                    <Textarea
                       id="message"
-                      isRequired
                       name="message"
                       label="Message"
+                      labelPlacement="outside"
                       placeholder="Your message..."
-                      isInvalid={!!formErrors.message}
-                      errorMessage={formErrors.message}
-                      className="min-h-[80px] w-full"
+                      minRows={3}
+                      isRequired
                     />
                   </div>
                 </div>
