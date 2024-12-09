@@ -122,6 +122,7 @@ export function Contact() {
                       Full Name
                     </label>
                     <Input 
+                      id="fullName"
                       isRequired
                       name="fullName"
                       type="text"
@@ -138,6 +139,7 @@ export function Contact() {
                       Email
                     </label>
                     <Input 
+                      id="email"
                       isRequired
                       name="email"
                       type="email"
@@ -154,6 +156,7 @@ export function Contact() {
                       Phone
                     </label>
                     <Input 
+                      id="phone"
                       isRequired
                       name="phone"
                       type="tel"
@@ -165,11 +168,12 @@ export function Contact() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium flex items-center gap-2">
+                    <label htmlFor="subject" className="text-sm font-medium flex items-center gap-2">
                       <FileText className="h-4 w-4 text-muted-foreground" />
                       Subject
                     </label>
-                    <Select
+                    <Select 
+                      id="subject"
                       isRequired
                       name="subject"
                       label="Select Subject"
@@ -191,6 +195,7 @@ export function Contact() {
                       Message
                     </label>
                     <Textarea 
+                      id="message"
                       isRequired
                       name="message"
                       label="Message"

@@ -57,7 +57,9 @@ export const Navbar = () => {
       maxWidth="xl"
       // shouldHideOnScroll
       position="sticky"
-      className="top-0 z-50 py-2"
+      classNames={{
+        wrapper: "top-0 z-[100] w-full",
+      }}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
     >

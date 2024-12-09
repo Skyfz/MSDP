@@ -17,14 +17,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  min-height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-
-
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-cyan-600;
 }
