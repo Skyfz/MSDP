@@ -16,10 +16,10 @@ export function Hero() {
     <section className="min-h-screen">
       <div className="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen items-center">
         <div className="grid lg:grid-cols-2 gap-16 items-center lg:-mt-32">
-          <div className="space-y-8">
+          <div className="space-y-8 mt-4">
             <FadeIn>
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              Debt Collection with<br />
+              Debt Recovery Solutions with<br />
               <FlipWords words={words} className="-ml-2"/>
               </h1>
             </FadeIn>
