@@ -1,7 +1,7 @@
 "use client";
 
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
-import {Button, ButtonGroup} from "@nextui-org/button";
+import {Button, ButtonGroup} from "@nextui-org/react";
 import Image from "next/image";
 import {
   BarChart3,
