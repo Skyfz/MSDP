@@ -29,7 +29,7 @@ export function Solutions() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl">
-              Comprehensive debt collection services tailored to your needs
+              Comprehensive debt collection tailored to your needs
             </p>
           </FadeIn>
         </div>
