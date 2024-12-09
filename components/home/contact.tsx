@@ -10,10 +10,81 @@ import { FadeIn } from "@/components/animations/fade-in";
 import { StaggerIn, StaggerItem } from "@/components/animations/stagger-in";
 import {Form} from "@nextui-org/form"
 import React from "react";
-
+import {Select, SelectSection, SelectItem} from "@nextui-org/select";
 
 export function Contact() {
-  
+  const [formErrors, setFormErrors] = React.useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+
+  const subjectOptions = [
+    { key: 'debt-recovery', label: 'Debt Recovery Services' },
+    { key: 'financial-consultation', label: 'Financial Consultation' },
+    { key: 'institutional-support', label: 'Institutional Debt Management' },
+    { key: 'other', label: 'Other Inquiry' }
+  ];
+
+  const validateField = (name: string, value: string) => {
+    switch (name) {
+      case 'fullName':
+        return value.trim().length < 2 ? 'Please enter your full name' : '';
+      case 'email':
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return !emailRegex.test(value) ? 'Please enter a valid email address (e.g., name@example.com)' : '';
+      case 'phone':
+        // Remove all non-digit characters
+        const digitsOnly = value.replace(/\D/g, '');
+        // Check if number of digits is between 10 and 10, 
+        // and total length (including potential country code) is max 13
+        return (digitsOnly.length < 10 || value.replace(/\s/g, '').length > 13) 
+          ? 'Please enter a valid phone number (e.g., 012-345-6789 or +27 (23) 456 7890)' 
+          : '';
+      case 'subject':
+        return !value ? 'Please select a subject' : '';
+      case 'message':
+        return value.trim().length < 10 ? 'Please enter a message with at least 10 characters' : '';
+      default:
+        return '';
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    // Force validation on all fields, even if they weren't touched
+    const errors = {
+      fullName: validateField('fullName', formData.get('fullName')?.toString() || ''),
+      email: validateField('email', formData.get('email')?.toString() || ''),
+      phone: validateField('phone', formData.get('phone')?.toString() || ''),
+      subject: validateField('subject', formData.get('subject')?.toString() || ''),
+      message: validateField('message', formData.get('message')?.toString() || '')
+    };
+
+    setFormErrors(errors);
+
+    // Check if there are any errors
+    const hasErrors = Object.values(errors).some(error => error !== '');
+    
+    if (hasErrors) {
+      return;
+    }
+
+    // If no errors, log or submit form
+    console.log({
+      name: formData.get('fullName'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      subject: formData.get('subject'),
+      message: formData.get('message')
+    });
+  };
   
   return (
     <section className="py-4 relative overflow-hidden pt-32 pb-32" id="contact">      
@@ -40,8 +111,9 @@ export function Contact() {
           >
             <Card className="backdrop-blur-xl bg-background/60 border-1 hover:border-primary/50">
               <Form 
-              className="p-8 space-y-6"
-              validationBehavior="native"
+                className="p-8 space-y-6"
+                onSubmit={handleSubmit}
+                validationBehavior="native"
               >
                 <div className="flex flex-col w-full gap-6">
                   <div className="space-y-2">
@@ -51,15 +123,12 @@ export function Contact() {
                     </label>
                     <Input 
                       isRequired
-                      label="Full Name"
                       name="fullName"
                       type="text"
-                      // placeholder="John Doe" 
-                      errorMessage={({validationDetails}) => {
-                        if (validationDetails.valueMissing) {
-                          return "Please enter a valid name";
-                        }
-                      }}
+                      label="Full Name"
+                      placeholder="John Doe"
+                      isInvalid={!!formErrors.fullName}
+                      errorMessage={formErrors.fullName}
                       className="w-full"
                     />
                   </div>
@@ -69,9 +138,14 @@ export function Contact() {
                       Email
                     </label>
                     <Input 
-                      id="email"
-                      type="email" 
+                      isRequired
+                      name="email"
+                      type="email"
+                      label="Email"
                       placeholder="john@email.com"
+                      isInvalid={!!formErrors.email}
+                      errorMessage={formErrors.email}
+                      className="w-full"
                     />
                   </div>
                   <div className="space-y-2">
@@ -80,38 +154,59 @@ export function Contact() {
                       Phone
                     </label>
                     <Input 
-                      id="phone"
-                      type="tel" 
+                      isRequired
+                      name="phone"
+                      type="tel"
+                      label="Phone"
                       placeholder="+27(01) 234-4567"
+                      isInvalid={!!formErrors.phone}
+                      errorMessage={formErrors.phone}
+                      className="w-full"
                     />
                   </div>
-                <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium flex items-center gap-2">
-                    <FileText className="h-4 w-4 text-muted-foreground" />
-                    Subject
-                  </label>
-                  <Input 
-                    id="subject"
-                    placeholder="How can we assist you?"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium flex items-center gap-2">
-                    <MessageSquare className="h-4 w-4 text-muted-foreground" />
-                    Message
-                  </label>
-                  <Textarea 
-                    id="message"
-                    placeholder="Your message..." 
-                  />
-                </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium flex items-center gap-2">
+                      <FileText className="h-4 w-4 text-muted-foreground" />
+                      Subject
+                    </label>
+                    <Select
+                      isRequired
+                      name="subject"
+                      label="Select Subject"
+                      placeholder="Choose a subject"
+                      className="w-full"
+                      isInvalid={!!formErrors.subject}
+                      errorMessage={formErrors.subject}
+                    >
+                      {subjectOptions.map((option) => (
+                        <SelectItem key={option.key} value={option.key}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-sm font-medium flex items-center gap-2">
+                      <MessageSquare className="h-4 w-4 text-muted-foreground" />
+                      Message
+                    </label>
+                    <Textarea 
+                      isRequired
+                      name="message"
+                      label="Message"
+                      placeholder="Your message..."
+                      isInvalid={!!formErrors.message}
+                      errorMessage={formErrors.message}
+                      className="min-h-[80px] w-full"
+                    />
+                  </div>
                 </div>
                 <Button 
+                  type="submit"
                   size="lg" 
                   variant="shadow" 
                   color="primary" 
                   className="w-full h-11"
-                  type="submit"
                 >
                   Send Message
                 </Button>
