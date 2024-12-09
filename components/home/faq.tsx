@@ -5,45 +5,46 @@ import { motion } from "framer-motion";
 const faqs = [
   {
     question: "What types of debt do you collect?",
-    answer: "We handle all types of debt, including personal, business, consumer loans, credit card debt, unpaid invoices, and B2B collections. We work across a range of sectors to ensure successful recovery."
+    answer: "We specialize in institutional debt recovery, focusing on banking debt portfolios. This includes retail debts like consumer loans, credit card debt, and other financial obligations managed by our banking partners."
   },
   {
-    question: "How long does the debt collection process take?",
-    answer: "The duration depends on the specifics of the case, such as the debt amount and the debtor’s willingness to cooperate. While some cases are resolved within weeks, others may take a few months."
+    question: "How long does the debt recovery process take?",
+    answer: "The timeline varies depending on the complexity of the debt portfolio and the debtor’s willingness to cooperate. Cases can range from targeted short-term interventions to comprehensive long-term strategies."
   },
   {
-    question: "What makes your debt collection services unique?",
-    answer: "We prioritize clear communication, professionalism, and ethical practices. We use a tailored approach for each case, combining technology with personal attention to ensure timely results."
+    question: "What makes your debt recovery services unique?",
+    answer: "We combine advanced financial technologies, data-driven strategies, and professional communication to maximize recovery. Our ethical practices ensure compliance and maintain institutional relationships."
   },
   {
     question: "What is your fee structure?",
-    answer: "Our fees are contingency-based, meaning we only charge when the debt is successfully recovered. The fee depends on the complexity and value of the debt, and we provide a clear quote after reviewing your case."
+    answer: "Our fees are contingency-based, tailored to align with the complexity and value of each debt portfolio. We provide this information to the banks on a case-by-case basis."
   },
   {
-    question: "Do you offer international debt collection services?",
-    answer: "Yes, we specialize in both domestic and international debt collection. Our global network allows us to recover debts from overseas while adhering to local laws and regulations."
+    question: "Do you handle international debt recovery?",
+    answer: "Yes, we specialize in cross-border debt recovery for banks, ensuring compliance with international regulations and leveraging our global expertise."
   },
   {
-    question: "What happens if the debtor refuses to pay?",
-    answer: "If a debtor refuses to pay, we follow a structured process that may include additional negotiations, legal actions, or other methods to ensure recovery. Our team works to resolve issues efficiently without damaging your business relationships."
+    question: "What happens if a debt remains unrecovered?",
+    answer: "We follow a multi-stage escalation process, utilizing advanced financial and legal strategies to maximize recovery potential while protecting institutional relationships."
   },
   {
-    question: "How do you ensure compliance with debt collection laws?",
-    answer: "We follow all applicable debt collection laws and regulations to ensure compliance. Our team stays up-to-date with legal changes and uses ethical practices in all collections."
+    question: "How do you ensure compliance with regulations?",
+    answer: "Our team rigorously adheres to financial and banking regulations, continuously updating our practices to reflect the latest standards in compliance."
   },
   {
-    question: "Will my business relationship with the debtor be affected?",
-    answer: "We take a professional and relationship-focused approach to collections, aiming to recover debts without damaging your business relationships. Our goal is to maintain a positive working relationship while resolving financial matters."
+    question: "Will my relationship with debtors be affected?",
+    answer: "Our professional and relationship-focused approach ensures debts are recovered without harming your institution's reputation or client relationships."
   },
   {
-    question: "Can you help with both small and large debts?",
-    answer: "Yes, we handle debts of all sizes, from small outstanding invoices to large corporate debts. No matter the size, we focus on maximizing recovery and minimizing the impact on your business."
+    question: "Can you manage debts of different scales?",
+    answer: "Yes, we are equipped to handle debt portfolios of all sizes, from individual retail cases to large-scale institutional debt management."
   },
   {
-    question: "How can I get started with debt collection?",
-    answer: "Getting started is easy. Simply contact us with details of the debt, and our team will review your case and advise you on the next steps. We will provide a tailored solution that fits your needs."
+    question: "How we get started?",
+    answer: "We contact you with details of your debt portfolio. Our team will assess your case and provide a tailored recovery strategy."
   },
 ];
+
 
 export function FAQ() {
   return (

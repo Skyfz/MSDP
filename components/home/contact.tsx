@@ -8,8 +8,13 @@ import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, User, MessageSquare, FileText } from "lucide-react";
 import { FadeIn } from "@/components/animations/fade-in";
 import { StaggerIn, StaggerItem } from "@/components/animations/stagger-in";
+import {Form} from "@nextui-org/form"
+import React from "react";
+
 
 export function Contact() {
+  
+  
   return (
     <section className="py-4 relative overflow-hidden pt-32 pb-32" id="contact">      
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,18 +38,29 @@ export function Contact() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-2"
           >
-            <Card className="backdrop-blur-xl bg-background/60 border-0">
-              <form className="p-8 space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
+            <Card className="backdrop-blur-xl bg-background/60 border-1 hover:border-primary/50">
+              <Form 
+              className="p-8 space-y-6"
+              validationBehavior="native"
+              >
+                <div className="flex flex-col w-full gap-6">
                   <div className="space-y-2">
                     <label htmlFor="fullName" className="text-sm font-medium flex items-center gap-2">
                       <User className="h-4 w-4 text-muted-foreground" />
                       Full Name
                     </label>
                     <Input 
-                      id="fullName"
-                      placeholder="John Doe" 
-                      className="h-11 shadow-xl" 
+                      isRequired
+                      label="Full Name"
+                      name="fullName"
+                      type="text"
+                      // placeholder="John Doe" 
+                      errorMessage={({validationDetails}) => {
+                        if (validationDetails.valueMissing) {
+                          return "Please enter a valid name";
+                        }
+                      }}
+                      className="w-full"
                     />
                   </div>
                   <div className="space-y-2">
@@ -55,11 +71,20 @@ export function Contact() {
                     <Input 
                       id="email"
                       type="email" 
-                      placeholder="john@company.com" 
-                      className="h-11 shadow-xl" 
+                      placeholder="john@email.com"
                     />
                   </div>
-                </div>
+                  <div className="space-y-2">
+                    <label htmlFor="phone" className="text-sm font-medium flex items-center gap-2">
+                      <Phone className="h-4 w-4 text-muted-foreground" />
+                      Phone
+                    </label>
+                    <Input 
+                      id="phone"
+                      type="tel" 
+                      placeholder="+27(01) 234-4567"
+                    />
+                  </div>
                 <div className="space-y-2">
                   <label htmlFor="subject" className="text-sm font-medium flex items-center gap-2">
                     <FileText className="h-4 w-4 text-muted-foreground" />
@@ -67,8 +92,7 @@ export function Contact() {
                   </label>
                   <Input 
                     id="subject"
-                    placeholder="How can we help?" 
-                    className="h-11 shadow-xl" 
+                    placeholder="How can we assist you?"
                   />
                 </div>
                 <div className="space-y-2">
@@ -79,18 +103,26 @@ export function Contact() {
                   <Textarea 
                     id="message"
                     placeholder="Your message..." 
-                    className="min-h-[80px] resize-none shadow-xl" 
                   />
                 </div>
-                <Button size="lg" variant="shadow" color="primary" className="w-full h-11">Send Message</Button>
-              </form>
+                </div>
+                <Button 
+                  size="lg" 
+                  variant="shadow" 
+                  color="primary" 
+                  className="w-full h-11"
+                  type="submit"
+                >
+                  Send Message
+                </Button>
+              </Form>
             </Card>
           </motion.div>
 
           <StaggerIn>
             <div className="space-y-6">
               <StaggerItem>
-                <Card className="p-6 backdrop-blur-xl bg-background/60 border-0">
+                <Card className="p-6 backdrop-blur-xl bg-background/60 border-1 hover:border-primary/50">
                   <div className="flex gap-4">
                     <Phone className="h-6 w-6 text-foreground" />
                     <div>
@@ -102,19 +134,19 @@ export function Contact() {
               </StaggerItem>
               
               <StaggerItem>
-                <Card className="p-6 backdrop-blur-xl bg-background/60 border-0">
+                <Card className="p-6 backdrop-blur-xl bg-background/60 border-1 hover:border-primary/50">
                   <div className="flex gap-4">
                     <Mail className="h-6 w-6 text-foreground" />
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-muted-foreground">info@msdp.com</p>
+                      <p className="text-muted-foreground">tanya@msdp.co.za</p>
                     </div>
                   </div>
                 </Card>
               </StaggerItem>
               
               <StaggerItem>
-                <Card className="p-6 backdrop-blur-xl bg-background/60 border-0">
+                <Card className="p-6 backdrop-blur-xl bg-background/60 border-1 hover:border-primary/50">
                   <div className="flex gap-4">
                     <MapPin className="h-6 w-6 text-foreground" />
                     <div>

@@ -14,13 +14,14 @@ import {
 } from "lucide-react";
 import { FadeIn } from "@/components/animations/fade-in";
 import { StaggerIn, StaggerItem } from "@/components/animations/stagger-in";
+import Link from "next/link";
 
 const features = [
   {
     icon: Shield,
-    title: "Compliant Recovery",
+    title: "Regulatory Compliance",
     description:
-      "Our debt collection practices strictly adhere to all regulatory requirements.",
+      "Strict adherence to banking and financial regulations",
   },
   {
     icon: Users,
@@ -36,21 +37,21 @@ const features = [
   },
   {
     icon: MessageSquare,
-    title: "Clear Communication",
+    title: "Transparent Reporting",
     description:
       "Regular updates and transparent reporting on collection progress.",
   },
   {
     icon: Building,
-    title: "Business Focus",
+    title: "Financial Expertise",
     description:
-      "Tailored solutions for businesses of all sizes across various industries.",
+      "Specialized professionals handling institutional debt portfolios",
   },
   {
     icon: FileCheck,
-    title: "Documentation",
+    title: "Institutional Solutions",
     description:
-      "Comprehensive documentation and reporting for all collection activities.",
+      "Tailored approaches for banking sector debt management",
   },
 ];
 
@@ -61,7 +62,8 @@ export function Features() {
         <div className="mb-16">
           <FadeIn>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Why Choose <span className="text-gradient">Our Services</span>
+                Fast Reolution with<br/>
+                <span className="text-gradient">Custom&nbsp;Solutions</span>
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
@@ -89,21 +91,31 @@ export function Features() {
                 <span className="text-gradient">Proven&nbsp;Results</span>
               </h3>
               <p className="text-xl text-muted-foreground leading-relaxed">
-              Our experts leverage industry knowledge and advanced technology to 
-              achieve exceptional outcomes.<br/>
-              We recognize the challenges of debt 
-              recovery and are committed to safeguarding your interests while 
-              fostering professional relationships.
+                We leverage industry expertise and technology to achieve outstanding results,
+                 addressing debt recovery challenges while fostering professional relationships with clients.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <Button size="lg" variant="shadow" color="primary" className="text-lg h-14">
-                Get a Call Back
+              <Button 
+              size="lg" 
+              variant="shadow" 
+              color="primary" 
+              className="text-lg h-14"
+              as={Link}
+              href="#contact"
+              >
+                Get in Touch
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="light" className="text-lg h-14">
-                Read More
+              <Button 
+              size="lg" 
+              variant="light" 
+              className="text-lg h-14"
+              as={Link}
+              href="#testimonials"
+              >
+                Reviews
               </Button>
             </div>
           </FadeIn>

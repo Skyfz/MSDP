@@ -4,6 +4,7 @@ import {Button, ButtonGroup} from "@nextui-org/button";
 import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/card";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { FadeIn } from "@/components/animations/fade-in";
 import { ScaleIn } from "@/components/animations/scale-in";
 import { FlipWords } from "@/components/ui/flip-words";
@@ -25,16 +26,29 @@ export function Hero() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-              Expert Services Focused on Maximizing Recovery and Maintaining Positive Business Relationships.
+              Maritz Schreurs & Du Preez Inc. provides expert services focused on maximizing recovery while maintaining positive business relationships.
               </p>
             </FadeIn>
             <FadeIn delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" variant="shadow" color="primary" className="text-lg h-14">
-                  Get Started
+                <Button 
+                  as={Link}
+                  href="#features"
+                  size="lg" 
+                  variant="shadow" 
+                  color="primary" 
+                  className="text-lg h-14"
+                >
+                  Read More
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="light" className="text-lg h-14">
+                <Button 
+                  as={Link}
+                  href="#faq"
+                  size="lg" 
+                  variant="light" 
+                  className="text-lg h-14"
+                >
                   Learn More
                 </Button>
               </div>
