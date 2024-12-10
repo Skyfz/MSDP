@@ -12,10 +12,10 @@ export const siteConfig = {
       label: "Features",
       href: "/#features",
     },
-    {
-      label: "Reviews",
-      href: "/#reviews",
-    },
+    // {
+    //   label: "Reviews",
+    //   href: "/#reviews",
+    // },
     {
       label: "Contact",
       href: "/#contact",
@@ -34,10 +34,10 @@ export const siteConfig = {
       label: "Features",
       href: "/#features",
     },
-    {
-      label: "Reviews",
-      href: "/#reviews",
-    },
+    // {
+    //   label: "Reviews",
+    //   href: "/#reviews",
+    // },
     {
       label: "Contact",
       href: "/#contact",

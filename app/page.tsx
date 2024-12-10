@@ -18,9 +18,9 @@ export default function Home() {
       <div id="features">
         <Features/>
       </div>
-      <div id="reviews">
+      {/* <div id="reviews">
         <Reviews />
-      </div>
+      </div> */}
       <div id="contact">
         <Contact />
       </div>

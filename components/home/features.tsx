@@ -51,7 +51,7 @@ export function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Excellent debt<br/>
+                Excellent&nbsp;
                 <span className="text-gradient">Features</span>
             </h2>
           </FadeIn>

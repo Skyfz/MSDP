@@ -23,8 +23,8 @@ export function Solutions() {
         <div className="mb-16">
           <FadeIn>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Resolution with<br/>
-                <span className="text-gradient">Custom&nbsp;Solutions</span>
+                Resolution&nbsp;
+                <span className="text-gradient">Solutions</span>
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>

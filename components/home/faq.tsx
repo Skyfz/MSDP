@@ -16,10 +16,6 @@ const faqs = [
     answer: "We combine advanced financial technologies, data-driven strategies, and professional communication to maximize recovery. Our ethical practices ensure compliance and maintain institutional relationships."
   },
   {
-    question: "What is your fee structure?",
-    answer: "Our fees are contingency-based, tailored to align with the complexity and value of each debt portfolio. We provide this information to the banks on a case-by-case basis."
-  },
-  {
     question: "Do you handle international debt recovery?",
     answer: "Yes, we specialize in cross-border debt recovery for banks, ensuring compliance with international regulations and leveraging our global expertise."
   },
