@@ -64,7 +64,7 @@ export function Hero() {
                   variant="light" 
                   className="text-lg h-14"
                 >
-                  FAQ's
+                  FAQ&apos;s
                 </Button>
               </div>
             </FadeIn>
