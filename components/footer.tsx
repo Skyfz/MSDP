@@ -1,10 +1,11 @@
 "use client";
 
-import { Building2, Mail, Phone } from "lucide-react";
+import { Building2, LogIn, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { Link as NextUILink } from "@nextui-org/react";
 import { siteConfig } from "@/config/site";
 import { FaWhatsapp } from "react-icons/fa";
+import { LogoIcon } from "./icons";
 
 
 export function Footer() {
@@ -14,9 +15,9 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16">
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <Building2 className="h-6 w-6 text-foreground" />
-              <span className="font-bold text-xl">MSDP</span>
-            </Link>
+              <LogoIcon/>
+             </Link>
+             <span className="font-bold text-xl">Maritz Schreurs & Du Preez</span>
             <p className="text-muted-foreground">
               Professional debt recovery solutions for businesses, combining expertise with ethical practices.
             </p>

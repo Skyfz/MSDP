@@ -19,7 +19,7 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-16 items-center lg:-mt-32">
           <div className="space-y-8">
             <FadeIn>
-              <h1 className="text-3xl md:text-7xl font-bold leading-tight pb-6">
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight pb-6">
                 Maritz Schreurs<br/>
                 & Du Preez
               </h1>
