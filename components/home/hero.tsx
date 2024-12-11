@@ -16,7 +16,7 @@ export function Hero() {
   return (
     <section className="min-h-screen">
       <div className="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen items-center">
-        <div className="grid lg:grid-cols-2 gap-16 items-center lg:-mt-32">
+        <div className="grid lg:grid-cols-2 gap-12 items-center lg:-mt-32">
           <div className="space-y-8">
             <FadeIn>
               <h1 className="text-5xl md:text-7xl font-bold leading-tight pb-6 pt-6">

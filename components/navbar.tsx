@@ -92,13 +92,13 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-4">
-        <Link isExternal aria-label="Phone" href="tel:+27119721555">
+        <Link isExternal aria-label="Phone" href="tel:+27119721360">
           <Phone className="text-default-500 size-6" />
         </Link>
         <Link isExternal aria-label="Mail" href="mailto:sanettep@mdsp.co.za">
           <Mail className="text-default-500 size-6" />
         </Link>
-        <Link isExternal aria-label="Whatsapp" href="https://wa.me/27119721555">
+        <Link isExternal aria-label="Whatsapp" href="https://wa.me/27119721360">
           <FaWhatsapp className="text-default-500 size-6" />
         </Link>
           <ThemeSwitch />

@@ -58,9 +58,10 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Business Hours</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>Monday - Friday</p>
-              <p>9:00 AM - 6:00 PM SAST</p>
-              {/* <p>24/7 Online Support Available</p> */}
+              <p>Monday - Thursday</p>
+              <p>8:00 AM - 4:30 PM SAST</p>
+              <p>Friday</p>
+              <p>8:00 AM - 3:00 PM SAST</p>
             </div>
           </div>
 
@@ -68,21 +69,21 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Connect With Us</h3>
             <div className="flex gap-4">
               <a 
-                href="tel:+27119721555" 
+                href="tel:+27119721360" 
                 className="p-2 rounded-full hover:bg-primary/10 transition-colors"
                 aria-label="Call us"
               >
                 <Phone className="h-6 w-6" />
               </a>
               <a 
-                href="mailto:info@msdp.com" 
+                href="mailto:sanettep@msdp.com" 
                 className="p-2 rounded-full hover:bg-primary/10 transition-colors"
                 aria-label="Email us"
               >
                 <Mail className="h-6 w-6" />
               </a>
               <a 
-                href="https://wa.me/27728288471" 
+                href="https://wa.me/27119721360" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full hover:bg-primary/10 transition-colors"
@@ -95,8 +96,11 @@ export function Footer() {
 
         </div>
         
-        <div className="mt-12 pt-8 border-t text-center text-muted-foreground">
+        <div className="mt-12 pt-8 border-t text-center font-bold text-muted-foreground">
           <p> {new Date().getFullYear()} MSDP. All rights reserved.</p>
+        </div>
+        <div className="pt-4 text-center text-muted-foreground">
+          <p>Registration Number: 2007/005476/21</p>
         </div>
       </div>
       <footer className="w-full flex items-center justify-center py-3">
@@ -106,7 +110,7 @@ export function Footer() {
                 href="https://skyfz.github.io/"
                 title="skypoint development homepage"
               >
-                <span className="text-default-600">Powered by</span>
+                <span className="text-default-400">Powered by</span>
                 <p className="text-primary">Skypoint</p>
               </NextUILink>
             </footer>
