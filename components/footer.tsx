@@ -17,7 +17,7 @@ export function Footer() {
             <Link href="/" className="flex items-center space-x-2">
               <LogoIcon/>
              </Link>
-             <span className="font-bold text-xl">Maritz Schreurs & Du Preez</span>
+             <span className="font-bold text-xl">Maritz, Schreurs & Du Preez Inc.</span>
             <p className="text-muted-foreground">
               Professional debt recovery solutions for businesses, combining expertise with ethical practices.
             </p>
@@ -25,11 +25,17 @@ export function Footer() {
           
           <div>
             <h3 className="font-semibold mb-4">Contact</h3>
-            <div className="space-y-2 text-muted-foreground">
-              <p>128 Monument Road</p>
-              <p>Kempton Park, GP 1620</p>
-              <p>+27(11) 972-1555</p>
-              <p>info@msdp.com</p>
+            <div className="space-y-4 text-muted-foreground">
+              <p>+27(011)-972-1360</p>
+              {/* <p>sanettep@msdp.com</p> */}
+              <p>
+                Aston Manor House<br/>
+                Unit 27<br/>
+                128 Monument Road<br/>
+                Aston Manor<br/>
+                Kempton Park<br/>
+                GP 1620
+              </p>
             </div>
           </div>
           

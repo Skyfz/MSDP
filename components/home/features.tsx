@@ -11,7 +11,7 @@ const features = [
     icon: Shield,
     title: "Regulatory Compliance",
     description:
-      "Strict adherence to banking and financial regulations",
+      "Strict adherence to all applicable legislative and regulatory requirements.",  
   },
   {
     icon: Users,
@@ -51,13 +51,13 @@ export function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Excellent&nbsp;
-                <span className="text-gradient">Features</span>
+                Trusted&nbsp;
+                <span className="text-gradient">Expertise</span>
             </h2>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl">
-              Industry-leading debt recovery solutions with proven expertise
+              Industry-leading debt recovery solutions with proven results.
             </p>
           </FadeIn>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

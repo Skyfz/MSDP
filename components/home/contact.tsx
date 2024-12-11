@@ -5,7 +5,7 @@ import {Card, CardHeader, CardBody, CardFooter} from "@nextui-org/react";
 import {Input} from "@nextui-org/react";
 import {Textarea} from "@nextui-org/react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, User, MessageSquare, FileText } from "lucide-react";
+import { Mail, MapPin, Phone, User, MessageSquare, FileText,IdCard } from "lucide-react";
 import { FadeIn } from "@/components/animations/fade-in";
 import { StaggerIn, StaggerItem } from "@/components/animations/stagger-in";
 import {Form} from "@nextui-org/react"
@@ -21,10 +21,17 @@ export function Contact() {
     phone: string;
     subject: string;
     message: string;
+    idnum: string;
   }
 
   const validateForm = (data: FormData) => {
     const newErrors: Record<string, string> = {};
+
+    if (!data.idnum?.trim()) {
+      newErrors.idnum = "ID number is required";
+    }else if(data.idnum.length !== 13) {
+      newErrors.idnum = "ID number must be exactly 13 characters";
+    }
 
     if (!data.fullName?.trim()) {
       newErrors.fullName = "Full name is required";
@@ -65,11 +72,11 @@ export function Contact() {
       newErrors.subject = "Please select a subject";
     }
 
-    if (!data.message?.trim()) {
-      newErrors.message = "Message is required";
-    } else if (data.message.trim().length < 10) {
-      newErrors.message = "Message must be at least 10 characters";
-    }
+    // if (!data.message?.trim()) {
+    //   newErrors.message = "Message is required";
+    // } else if (data.message.trim().length < 10) {
+    //   newErrors.message = "Message must be at least 10 characters";
+    // }
 
     return newErrors;
   };
@@ -84,7 +91,8 @@ export function Contact() {
       email: String(formEntries.email || ''),
       phone: String(formEntries.phone || ''),
       subject: String(formEntries.subject || ''),
-      message: String(formEntries.message || '')
+      message: String(formEntries.message || ''),
+      idnum: String(formEntries.idnum || ''),
     };
 
     const validationErrors = validateForm(formData);
@@ -99,9 +107,9 @@ export function Contact() {
   };
 
   const subjectOptions = [
-    { key: 'debt-recovery', label: 'Debt Recovery Services' },
-    { key: 'financial-consultation', label: 'Financial Consultation' },
-    { key: 'institutional-support', label: 'Institutional Debt Management' },
+    { key: 'payment-arrangement', label: 'Payment Arrangement' },
+    { key: 'settlement', label: 'Settlement Inquiry' },
+    { key: 'statement', label: 'Statement Request' },
     { key: 'other', label: 'Other Inquiry' }
   ];
   
@@ -143,6 +151,17 @@ export function Contact() {
                       labelPlacement="outside"
                       placeholder="John Doe"
                       startContent={<User className="text-default-400 pointer-events-none flex-shrink-0" />}
+                      isRequired
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Input
+                      id="idnum"
+                      name="idnum"
+                      label="ID Number"
+                      labelPlacement="outside"
+                      placeholder="YYMMDD-SSSS-CAZ"
+                      startContent={<IdCard className="text-default-400 pointer-events-none flex-shrink-0" />}
                       isRequired
                     />
                   </div>
@@ -194,7 +213,6 @@ export function Contact() {
                       labelPlacement="outside"
                       placeholder="Your message..."
                       minRows={1}
-                      isRequired
                     />
                   </div>
                 </div>
@@ -219,7 +237,7 @@ export function Contact() {
                     <Phone className="h-6 w-6 text-foreground" />
                     <div>
                       <h3 className="font-semibold mb-1">Phone</h3>
-                      <p className="text-muted-foreground">+27(11) 972-1555</p>
+                      <p className="text-muted-foreground">+27(011)-972-1360</p>
                     </div>
                   </div>
                 </Card>
@@ -231,7 +249,7 @@ export function Contact() {
                     <Mail className="h-6 w-6 text-foreground" />
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-muted-foreground">tanya@msdp.co.za</p>
+                      <p className="text-muted-foreground">sanettep@mdsp.co.za</p>
                     </div>
                   </div>
                 </Card>
@@ -243,7 +261,13 @@ export function Contact() {
                     <MapPin className="h-6 w-6 text-foreground" />
                     <div>
                       <h3 className="font-semibold mb-1">Address</h3>
-                      <p className="text-muted-foreground">128 Monument Road<br/> Aston Manor House<br />Kempton Park<br/>GP 1620</p>
+                      <p className="text-muted-foreground">
+                        Aston Manor House<br/>
+                        Unit 27<br/>
+                        128 Monument Road<br/>
+                        Aston Manor<br/>
+                        Kempton Park<br/>
+                        GP 1620</p>
                     </div>
                   </div>
                 </Card>

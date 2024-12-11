@@ -95,7 +95,7 @@ export const Navbar = () => {
         <Link isExternal aria-label="Phone" href="tel:+27119721555">
           <Phone className="text-default-500 size-6" />
         </Link>
-        <Link isExternal aria-label="Mail" href="mailto:tanya@msdp.co.za">
+        <Link isExternal aria-label="Mail" href="mailto:sanettep@mdsp.co.za">
           <Mail className="text-default-500 size-6" />
         </Link>
         <Link isExternal aria-label="Whatsapp" href="https://wa.me/27119721555">
@@ -112,7 +112,7 @@ export const Navbar = () => {
         <Link isExternal aria-label="Phone" href="tel:+27119721555">
           <Phone className="text-default-500 size-6" />
         </Link>
-        <Link isExternal aria-label="Mail" href="mailto:tanya@msdp.co.za">
+        <Link isExternal aria-label="Mail" href="mailto:sanettep@mdsp.co.za">
           <Mail className="text-default-500 size-6" />
         </Link>
         <Link isExternal aria-label="Whatsapp" href="https://wa.me/27119721555">
