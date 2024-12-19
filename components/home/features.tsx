@@ -47,7 +47,7 @@ const features = [
 
 export function Features() {
   return (
-    <section className="pt-24 lg:pt-32">
+    <section className="pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">

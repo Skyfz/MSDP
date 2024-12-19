@@ -114,7 +114,7 @@ export function Contact() {
   ];
   
   return (
-    <section className="py-4 relative overflow-hidden pt-20 pb-32" id="contact">      
+    <section className="py-4 relative overflow-hidden pt-16" id="contact">      
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <FadeIn>
@@ -219,8 +219,8 @@ export function Contact() {
                 <Button 
                   type="submit"
                   size="lg" 
-                  variant="shadow" 
-                  color="primary" 
+                  variant="solid" 
+                  color="success" 
                   className="w-full h-11"
                 >
                   Send Message

@@ -26,6 +26,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Building2, Mail, Phone } from "lucide-react";
 import * as React from "react";
 import { usePathname } from "next/navigation";
+import { FAQ } from "./home/faq";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -62,6 +63,7 @@ export const Navbar = () => {
       }}
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
+      shouldHideOnScroll={true}
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
@@ -90,6 +92,7 @@ export const Navbar = () => {
       <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
+        
       >
         <NavbarItem className="hidden sm:flex gap-4">
         <Link isExternal aria-label="Phone" href="tel:+27119721360">

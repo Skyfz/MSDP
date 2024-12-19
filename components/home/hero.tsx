@@ -14,8 +14,8 @@ export function Hero() {
   const words = ["Efficiency", "Integrity", "Results", "Support"];
 
   return (
-    <section className="min-h-screen">
-      <div className="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen items-center">
+    <section className="min-h-svh">
+      <div className="flex max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-svh items-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center lg:-mt-32">
           <div className="space-y-8">
             <FadeIn>
@@ -50,8 +50,8 @@ export function Hero() {
                   as={Link}
                   href="#solutions"
                   size="lg" 
-                  variant="shadow" 
-                  color="primary" 
+                  variant="solid" 
+                  color="success" 
                   className="text-lg h-14"
                 >
                   Read More

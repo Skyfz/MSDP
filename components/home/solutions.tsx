@@ -18,16 +18,16 @@ import Link from "next/link";
 
 export function Solutions() {
   return (
-    <section className="py-4 lg:pt-32">
+    <section className="py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">  
+        <div className="">  
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <FadeIn direction="left">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80"
+                src="https://images.unsplash.com/photo-1436450412740-6b988f486c6b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Professional team"
                 fill
                 className="object-cover"
@@ -48,8 +48,8 @@ export function Solutions() {
                 <div className="flex flex-col sm:flex-row gap-4 mt-8">
                   <Button 
                   size="lg" 
-                  variant="shadow" 
-                  color="primary" 
+                  variant="solid" 
+                  color="success" 
                   className="text-lg h-14"
                   as={Link}
                   href="#contact"
